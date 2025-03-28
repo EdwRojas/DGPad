@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+ <!-- Fuentes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"> <!-- Roboto Slab-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"> <!--Nunito Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"> <!--Merriweather-->
+
+    <title>MatPad</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9p5MAAAAHdElNRQfnBggCBjtptMYZAAAGX0lEQVRYw5VXXYxbRxX+zsy91/b6Z73dn2TpbvOHUqGmZCtQUhQJESRoaASomxeqqlWbLqSiVCoKBcRLJSRASkB9CE2UqqGEVqJA0gp4qBopUqQqELUNlNCqSVTiTZMqbDbr/bHX9r135hweru312l57GWnke2funO+b75wzZ0xYRSuOj+PwngXc5W3AX8t/R4ZcnC1fxEIlAJFGVhxs6R3BlPWx2R3EL/reRe7Sk7h7//ModrFNnSZz27biR88I0uzh7K0PcfHaIp767D0xz7L9Z/HyHQuBHVZOzEmHdvLO3pGpG+zHX9v+3PzGM+NyZ3Idfjy0F28FF/Ddh99Ef7E9Fd1u8NqOMfzn5ym8/XmNK8EnWOeu1TeDhW19GXz7EzM9ocV+MCmlH5YQHrQUPqI9pzCjfZ4M8seOfHzy3qxO9fTqZP4n518v9iRLmNg3jVe37sSJU5MtWKp54OShb2D0gfcwVZrFqDvo3qbiYx+XcpvnzeyLvpSeNRLuAiTJjqTgSEKUxKDJ850gaSjc7rM/sRAWXs4tXn9j+4bs/qSKrx3KARfWlPHEy1sgTmplAmwq2HP1L9iYJPQidvufZ889d700c9insF9cTpEDCMEKkUBBQIAAEAZEQ0jDkgKY2PUl2DofLhy8VLr62hYM7dq/5ptK3BgOnnmsgwICbB4FRtzBu66bW6/4KD8pivtFKwFBBIAIIuR6bwwoAggQFXWjmMpS+cK0yb/ywLUDjx799XlkwtjKBEg5yJUBX1e+ZlXwJdIAQAyiOkHUQKj+GK1t4KO1Wkx48fPiqCIrwMD0V8TfdfrYcV10g04xoBASwJqUUHOCUNe8oSqRONGVzdIzAY3LQlUUBTEuQK5uQuxkrS50GzLS8mndIEFsQQpF0cI1lYgIMceFq5wOBEjQYlbaurs922qTepA02BPAUx40LVfAabElWLauLQ6tzEdAEADcsJ8ocAGH4tBwV+ECWpK+AbOzAER17lG2SJ0NA2AhilEcDi0n4KxssfGtI3x158vl1kxMjpqG4CYIJFrNWlQgyqyGQPe23EvU/E6bKplCcVDv40B6SBHSOr2gK2RjyutCQNoBrIKQ1LogBEb+li7+kuftIhGgSbSjy2+XufKbSljmDgS6S938Zc3nFkIMIQEQiL3NsH2YQFACuAQYJX2xgcRLqrwcsolA675Xo4QIARqB1cizkKcIooSUsKSFJDpPCZzoScJxO7mgKd9X6wYh0Z+WzLmLxt9tDMhlSEo56Wk3PMxsP1PPbJEoO1ZWoHnv0nG2Nk0AT9nSxlDJ93RMvDgoN2D5yJTDixQsWWHbjYA0PlDDQGctCBAfdtQIPwIWZaHet1aOi7u0PCrb3EJAtbMWeaL1WG70EC0Ng0TAJAyCYQGMwPrUpKAAxgZgtt0JLPtd2QFNn0mdNgOw1FQKRFD2fYQm7EBAGnYpNemqxb9LjViq3tHNRXFUCxrrW7lSQWi6nIT1/K4eLMyAZxO2muL1va4YFdGExIUMgQQSHdIsgIQCNp1igCL9hIVqgWNEsjfKM+MQyVAbpPpTvfIJGNQ/4+gHyWAQHG2CGWRCC+YOBEQsej1AoK4JqMRCMBKuzdu5Z2B5gKqukMZeV4RQ223APHrLVH7GBusBQIggpPJfWf8Qu03SNd0JXXyxbxRj3rqTSTfxfWh13VbdUQPmOlj1vdprhKoKQri6SKkw5iV+P+BmD2R+S7KNRlcmYKcKCGFQMPP+e3OLLwzHM+Mx13tVFBUtARYSAUJVgSWq9dXAE64SJABKiePG/t0byzw15m76Tl6KVwpmuetaCDhrM/jD4zdwu/HwfHYM0yi/szuxfu9QPLsn7sVeUq6+wlpVrNJggmYCbNSVaKLov4HOazd2JhnvfXoktWH3+fzc0TmqFIsOI/fufbh3x9OdsyDNAPZexuTjn8ORLzuYCYPyTZ4/9dN13zp9ePrUaBDyppSTvNpb0ad9w2KhdCJQ/0qk9MVQ8z5PJT8Y8oYvvTF3obDDyyJ3zzEcXzyFF77+JwzjzZak6Vp///vsE9i54wTum92AczaH2bCMQUnjrUfvB+7+SJ3ZNUR3vHiWt5yYkp4pxnDQhxH1KbzO+3AkcQ4PPfhHrGHTDWZ1zXdi+IEI5OghvPPVLH43sQm/OrATh+4fAP5RvQIS/V+Xmf8B8Zw1z+kaeN8AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDYtMDhUMDI6MDY6NTIrMDA6MDBpFoWvAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA2LTA4VDAyOjA2OjUyKzAwOjAwGEs9EwAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wNi0wOFQwMjowNjo1OSswMDowME1ZSDYAAAAASUVORK5CYII=" type="image/png">
+</head>
+<body>
+<!-- Encabezado -->
+<header>
+    <div class="header-content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Universidad_Industrial_de_Santander_logo.svg/2560px-Universidad_Industrial_de_Santander_logo.svg.png"
+            width="10%" height="10%" class="image-desplazada">
+        <div class="header-text">
+            <h1 style="color: white"; class="Font-Roboto-Slab"><span style="margin-left: 100px;">Grupo MatPad - UIS</span></h1>
+        </div>
+        <div class="header-buttons">
+            <button class="Font-Merriweather" class="custom-button" onclick="showSection('inicio')">Inicio</button>
+            <button class="Font-Merriweather" class="custom-button" onclick="showSection('contacto')">Contacto</button>
+            <div id="dropdown-container" class="dropdown-container">
+                <button id="dropdown-button" class="dropdown-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="https://dgpad-colombia.udistrital.edu.co/" target="_blank" class="Font-Merriweather">DGPad</a>
+                    <a href="https://uis.edu.co/fc-gruinv-edumat-es/" target="_blank" class="Font-Merriweather">Edumat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Contenido principal -->
+
+<div class="main-content" id="inicio">
+    <div class="image-container">
+        <a href="https://uis.edu.co/fc-gruinv-edumat-es/" target="_blank">
+            <img class="effect1" src="https://edwrojas.github.io/DGPad/edumat.png" alt="Logo1" style="width: 95px;height: auto;">
+        </a>
+        <a href="https://dgpad-colombia.udistrital.edu.co/" target="_blank">
+            <img class="effect2" src="https://edwrojas.github.io/DGPad/dgpad.png" alt="Logo2" width="50%" height="50%" />
+        </a>
+    </div>
+    <section>
+        <h2 class="Font-Nunito-Sans"><center>Matemática Recreativa</center></h2>
+        <p class="Font-Merriweather" align="center"><i>Abre la <b>actividad</b> que deseas realizar dando click sobre la imagen</i></p>
+        <br>
+
+<!-- Primera sección -->
+
+<div class="container-4-cards">
+    <div class="card-container">
+        <div class="image-card">
+            <a href="https://edwrojas.github.io/DGPad/Tri%C3%A1ngulo%20m%C3%A1gico%20v_8.html" target="_blank" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://edwrojas.github.io/DGPad/img_tm.png" width="100%">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="Font-Roboto-Slab" style="font-size: 10.5pt"><b>Un triángulo mágico es un arreglo triangular de casillas donde se ubican números diferentes, usualmente naturales, de modo que la suma de los números en cada lado del triángulo es un número dado.</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue; text-align: center;"><b>Triángulo Mágico</b></p>
+    </div>
+
+    <div class="card-container">
+        <div class="image-card">
+            <a href="https://edwrojas.github.io/DGPad/sujiko_v8.html" target="_blank" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://edwrojas.github.io/DGPad/img_suj.png" width="100%">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="Font-Roboto-Slab" style="font-size: 10.5pt"><b>El sujiko es un puzzle matemático que consiste en una cuadricula dividida en 9 casillas. El objetivo es ubicar los números del 1 al 9 en cada casilla sin repetir ninguno, de modo que la suma de los cuatro números alrededor de cada círculo sea igual al número dentro de él.</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue;text-align: center;"><b>Sujiko</b></p>
+    </div>
+
+    <div class="card-container">
+            <div class="image-card">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://edwrojas.github.io/DGPad/img_kenk.png" width="100%">
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                            <p class="Font-Merriweather" style="font-size: 9.5pt; margin-top: -40px"><b> El Kenken consiste en una cuadrícula dividida en cajas, en las que hay operaciones aritméticas. El objetivo es rellenar la cuadrícula con números, como el sudoku, de tal forma que no se repitan en las filas, columnas ni en las cajas y, además, se cumplan las operaciones allí indicadas. </b></p>
+                            </div>
+                            <br>
+                            <div class="card-k-container-button">
+                                <a href="https://edwrojas.github.io/DGPad/kenken3x3%20v_4.html" target="_blank"><button class="card-button" style="font-family: 'Roboto Slab', serif; font-size: 10pt"><b>3x3</b></button></a>
+                                <a href="https://edwrojas.github.io/DGPad/kenken4x4%20v_3.html" target="_blank"><button class="card-button" style="font-family: 'Roboto Slab', serif; font-size: 10pt"><b>4x4</b></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue;text-align: center;"><b>KenKen</b></p>
+    </div>
+
+    <div class="card-container">
+            <div class="image-card">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://edwrojas.github.io/DGPad/img_mem.png" width="100%">
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                            <p class="Font-Merriweather" style="font-size: 10.5pt; margin-top: -50px"><b> Un memorama es un pasatiempo que ejercita la memoria. El objetivo del juego es recordar la ubicación de las cartas para formar parejas. </b></p>
+                            </div>
+                            <br>
+                            <div class="card-container-button">
+                                <a href="https://edwrojas.github.io/DGPad/Memorama%203x4_v9.html" target="_blank"><button class="card-button" style="font-family: 'Roboto Slab', serif; font-size: 10pt"><b>3x4</b></button></a>
+                                <a href="https://edwrojas.github.io/DGPad/memorama%205x4_v6.html" target="_blank"><button class="card-button" style="font-family: 'Roboto Slab', serif; font-size: 10pt"><b>4x5</b></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue;text-align: center;"><b>Memorama</b></p>
+    </div>
+</div>
+
+<br><br>
+
+<!-- Segunda sección -->
+
+<div class="container-4-cards">
+    <div class="card-container">
+        <div class="image-card">
+            <a href="https://edwrojas.github.io/DGPad/Cripto1.html" target="_blank" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://edwrojas.github.io/DGPad/img_crta.png" width="100%">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="Font-Roboto-Slab" style="font-size: 10.5pt"><b>La criptoaritmética es un tipo de acertijo matemático en el que se tienen símbolos o letras y el desafío consiste en encontrar qué digíto corresponde a cada símbolo, de manera que la operación matemática dada sea correcta. </b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue; text-align: center;"><b>Cripto-Aritmética</b></p>
+    </div>
+    
+    <div class="card-container">
+            <div class="image-card">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://edwrojas.github.io/DGPad/img_sud2x2.png" width="100%">
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                            <p class="Font-Merriweather" style="font-size: 9.5pt; margin-top: -40px"><b> El sudoku es un rompecabezas matemático que consiste en rellenar una cuadricula subdivida en regiones. El objetivo es colocar números en las casillas de modo que no se repitan números en ninguna fila, columna y región. </b></p>
+                            </div>
+                            <br>
+                            <div class="card-k-container-button">
+                                <a href="https://edwrojas.github.io/DGPad/Sudoku2x2_v10.html" target="_blank"><button class="card-button" style="font-family: 'Roboto Slab', serif; font-size: 10pt"><b>4x4</b></button></a>
+                                <a href="https://edwrojas.github.io/DGPad/sudoku3x3_v3.html" target="_blank"><button class="card-button" style="font-family: 'Roboto Slab', serif; font-size: 10pt"><b>9x9</b></button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue;text-align: center;"><b> Sudoku </b></p>
+    </div>
+
+    <div class="card-container">
+        <div class="image-card">
+            <a href="https://edwrojas.github.io/DGPad/Reto_Matemático.html" target="_blank" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://edwrojas.github.io/DGPad/img_RM1.png" width="100%">
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="Font-Roboto-Slab" style="font-size: 10.5pt"><b>Este reto matemático consiste en organizar los dígitos del 0 al 9, sin repetir ninguno y utilizándolos todos, de manera que tanto la suma como el producto sean correctos. ¿Serás capaz de resolverlo? </b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue;text-align: center;"><b> Reto Matemático 1 </b></p>
+    </div>
+
+        <div class="card-container">
+        <div class="image-card">
+            
+        </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue;text-align: center;"><b></b></p>
+    </div>
+</div>
+
+<!-- Div de Geometría -->
+
+        <br>
+        <hr style="border: none; border-top: 2px solid #276e90; margin-top: 15px; margin-bottom: 20px;">
+        <h2 class="Font-Nunito-Sans"><center>Geometría Euclidiana</center></h2>
+<p class="Font-Merriweather" align="center"><i>Abre la <b>actividad</b> que deseas realizar dando click sobre la imagen</i></p>
+<br>
+<div class="container-4-cards" style="margin-left: 160px; margin-right: 160px;">
+    <div class="card-container">
+        <div class="image-card">
+            <a href="https://edwrojas.github.io/DGPad/duplicar_y_triplicar_segmentos.html" target="_blank" class="flip-card">
+                <img src="https://edwrojas.github.io/DGPad/img_nseg.png" width="100%" 
+                    style="transform: scale(1); transition: transform 0.7s ease, filter 0.7s ease;"
+                    onmouseover="this.style.transform = 'scale(1.03)'; this.style.filter = 'brightness(95%)'"
+                    onmouseout="this.style.transform = 'scale(1)'; this.style.filter = 'brightness(100%)'">
+            </a>
+        </div>
+        <p class="Font-Merriweather" style="font-size: 12pt; color: darkslateblue; text-align: center;"><b>Duplicar y Triplicar un Segmento</b></p>
+    </div>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </section>
+</div>
+
+<!-- Formulario de contacto -->
+<div class="main-content" id="contacto" style="display: none;">
+    <h2 align="center" class="Font-Nunito-Sans"><font color="black">¡Contáctanos!</font></h2>
+    <form id="contact-form" class="contact-form">
+        <div class="form-group">
+            <label for="nombre"><font color="black"><b class="Font-Merriweather">Nombre:</b></font></label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="apellido"><font color="black"><b class="Font-Merriweather">Apellido:</b></font></label>
+            <input type="text" id="apellido" name="apellido" required>
+        </div>
+        <div class="form-group full-width">
+            <label for="correo"><font color="black"><b class="Font-Merriweather">Correo:</b></font></label>
+            <input type="email" id="correo" name="correo" required>
+        </div>
+        <div class="form-group full-width full-height">
+            <label for="mensaje"><font color="black"><b class="Font-Merriweather">Mensaje:</b></font></label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+        <button type="submit" class="Font-Merriweather"><b>Enviar</b></button>
+    </form>
+    <div id="confirmation-message" style="display: none;">
+        <p class="Font-Merriweather">¡Mensaje enviado! Gracias por contactarnos.</p>
+    </div>
+</div>
+
+<footer>
+    <section>
+        <div class="footer-left">
+            <p class="Font-Merriweather">Grupo <b style="font-size: 16px">MatPad</b> - EDUMAT - Escuela de Matemáticas</p><p style="line-height: 0em" class="Font-Merriweather">Ciudad Universitaria, Carrera 27 con Calle 9, Edificio Camilo Torres.</p>
+        </div>
+        <div class="footer-right">
+            <p class="Font-Merriweather"><b>PBX: </b>(607) 634 40 00 Ext. por definir</p><p style="line-height: 0em" class="Font-Merriweather"><b>E-mail: </b>laperezf@saber.uis.edu.co</p><p style="line-height: 1em" class="Font-Merriweather"><span style="font-weight">Bucaramanga, Colombia</span></p>
+        </div>
+    </section>
+</footer>
+
+<script type="text/javascript">
+    const dropdownContainer = document.getElementById('dropdown-container');
+    const dropdownButton = document.getElementById('dropdown-button');
+    const dropdownContent = document.getElementById('dropdown-content');
+
+    dropdownButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        dropdownContainer.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!dropdownContainer.contains(event.target)) {
+            dropdownContainer.classList.remove('active');
+        }
+    });
+
+    function showSection(sectionId) {
+        const sections = document.getElementsByClassName('main-content');
+        for (let i = 0; i < sections.length; i++) {
+            if (sections[i].id === sectionId) {
+                sections[i].style.display = 'block';
+            } else {
+                sections[i].style.display = 'none';
+            }
+        }
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    const confirmationMessage = document.getElementById('confirmation-message');
+
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Obtenemos los valores de los campos del formulario
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const correo = document.getElementById('correo').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        // Construimos el enlace para el envío de correo
+        const mailtoLink = `mailto:edwinrojas0203@gmail.com?subject=Formulario%20de%20Contacto&body=Nombre:%20${nombre}%0AApellido:%20${apellido}%0ACorreo:%20${correo}%0AMensaje:%20${mensaje}`;
+
+        // Abrimos el enlace de correo
+        window.location.href = mailtoLink;
+
+        // Mostramos el mensaje de confirmación
+        confirmationMessage.style.display = 'block';
+        
+        // Limpiamos los campos del formulario
+        contactForm.reset();
+    });
+
+</script>
+
+<style>
+   /* Estilos para el encabezado */
+   header {
+       background-color: #276e90;
+       color: white;
+       padding: 10px;
+       border-radius: 10px;
+   }
+
+   .header-content {
+       display: flex;
+       align-items: center;
+   }
+
+   .header-text {
+       text-align: center;
+       flex: 1 1 auto;
+   }
+
+   .header-buttons {
+       flex: 0 0 auto;
+       margin-left: 10px;
+   }
+
+   .header-buttons button {
+       margin-left: 10px;
+       background-color: transparent;
+       border: none;
+       color: #fff;
+       font-size: 16px;
+       cursor: pointer;
+       transition: transform 0.3s;
+   }
+
+   .header-buttons button:hover,
+   .header-buttons button:focus {
+       transform: scale(1.1);
+   }
+
+   /* Estilos para el pie de página */
+   footer {
+       position: relative;
+       background-color: #276e90;
+       color: #fff;
+       padding: 50px;
+       text-align: center;
+       border-radius: 10px 10px 10px 10px;
+   }
+
+   /* Alineación */
+   .footer-left {
+       position: absolute;
+       top: 50%;
+       left: 150px;
+       transform: translateY(-50%);
+   }
+
+   .footer-right {
+       display: inline-block;
+       position: absolute;
+       top: 50%;
+       right: 150px;
+       transform: translateY(-50%);
+   }
+
+    .footer-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+   /* Imagen encabezado */
+   .image-desplazada {
+       margin-left: 10px;
+   }
+
+   /* Estilos para el botón de "Más" */
+   .dropdown-container {
+       position: relative;
+       display: inline-block;
+       margin-left: 10px;
+       vertical-align: middle;
+   }
+
+   .dropdown-button {
+       background-color: transparent;
+       border: none;
+       color: #fff;
+       font-size: 16px;
+       cursor: pointer;
+       transition: transform 0.3s;
+   }
+
+   .dropdown-button:hover,
+   .dropdown-button:focus {
+       transform: scale(1.1);
+   }
+
+   .dropdown-button span {
+       display: block;
+       width: 20px;
+       height: 2px;
+       background-color: #fff; /* color de las 3 lineas */
+       margin-bottom: 4px;
+   }
+
+   .dropdown-content {
+       display: none;
+       position: absolute;
+       min-width: 95px;
+       box-shadow: none;
+       padding: 0px;
+       z-index: 1;
+       left: -40px; /* Nuevo valor para correr a la izquierda */
+       top: 100%;
+       background-color: transparent;
+       border-radius: 0px;
+   }
+
+   .dropdown-container.active .dropdown-content {
+       display: block;
+   }
+
+   .dropdown-content a {
+       display: block;
+       color: #fff; /* Cambia el color del texto */
+       background-color: #0e4863; /* color que se ve en el "más"*/
+       padding: 8px 16px; /* Ajusta el tamaño del padding para cambiar el tamaño del botón */
+       border-radius: 0px; /* Ajusta la redondez de los bordes */
+       text-decoration: none;
+       margin-right: 3px;
+       box-sizing: border-box;
+   }
+
+   .dropdown-content a:hover {
+       background-color: #3787a4; /* Cambia el color de fondo al pasar el cursor */
+   }
+
+   .dropdown-content a:first-child {
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+   }
+
+   .dropdown-content a:last-child {
+       border-bottom-left-radius: 10px;
+       border-bottom-right-radius: 10px;
+   }
+
+/* Imagen DGPAD y Edumat con enlace */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10 px;
+    }
+
+.image-container img {
+    width: 260px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* Mantén la relación de aspecto original de la imagen */
+    }
+.image-container .effect1:hover {
+        /* Estilos para la primera imagen al pasar el cursor */
+        opacity: 0.8;
+        transform: scale(1.1);
+        /* Agrega aquí los efectos adicionales deseados */
+    }
+
+.image-container .effect2:hover {
+    /* Estilos para la segunda imagen al pasar el cursor */
+    filter: brightness(75%);
+    /* Agrega aquí los efectos adicionales deseados */
+} 
+   /* Estilos para el contenido principal */
+   .main-content {
+       padding: 10px;
+   }
+
+   .main-content button[type="submit"] {
+       grid-column: span 2;
+       background-color: #2b7a9b; /*Color botón enviar*/
+       color: #fff;
+       border: none;
+       padding: 10px;
+       border-radius: 5px;
+       cursor: pointer;
+   }
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto; /* Usamos 'auto' para que las filas se ajusten al contenido */
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: seagreen;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #0e4863; /*Borde caja contacto*/
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente el textarea */
+    height: 100px; /* Aumentar el tamaño vertical del textarea */
+}
+
+.form-group.full-width {
+    grid-column: 1 / span 2; /* El campo de correo ocupa 2 columnas */
+}
+
+.form-group.full-height {
+    grid-row: span 2; /* El campo de mensaje ocupa 2 filas */
+}
+
+#confirmation-message {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilos para el efecto de botón */
+.custom-button {
+    background-color: seagreen;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.custom-button:hover {
+    transform: scale(1.1);
+}
+
+/* Cositas de las tarjetas*/
+
+.container-4-cards {
+    display: flex;
+    justify-content: space-between; /* Esto distribuirá el espacio entre las tarjetas */
+    margin: 0 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image-card {
+    width: 250px;  /* Ancho de la tarjeta */
+    height: 250px; /* Alto de la tarjeta */
+    perspective: 1000px;
+    }
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    }
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    position: relative;
+    }
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    }
+
+.flip-card-front,
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+
+.flip-card-front {
+    color: black;
+    }
+
+.flip-card-back {
+    background-image: url('https://edwrojas.github.io/DGPad/focard.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+    background-position: center;
+    color: #0a3143;
+    transform: rotateY(180deg);
+    display: flex; /* Usa flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    padding: 16px; /* Ajusta el padding para separar el texto del borde */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    text-align: justify; /* Justifica el texto dentro de la tarjeta */
+    font-size: 14px; /* Ajusta el tamaño del texto según tus preferencias */
+    }
+
+.image-tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+.card-container-button{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    position: absolute;
+    bottom: 50px; /* Coloca los botones 50px desde la parte inferior */
+}
+
+.card-button {
+    padding: 10px 15px; /* Padding interior del botón */
+    background-color: #2b7a9b; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Borde del botón */
+    border-radius: 5px; /* Radio de borde del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.card-button:hover {
+    background-color: #38a0cc; /* Color de fondo del botón al pasar sobre él */
+}
+
+.card-k-container-button{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    position: absolute;
+    bottom: 30px; /* Coloca los botones 50px desde la parte inferior */
+}
+/* Fuentes*/
+
+    .Font-Roboto-Slab {
+            font-family: 'Roboto Slab', serif;
+            font-size: 22pt;
+        }
+    .Font-Nunito-Sans {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 16pt;
+        }
+    .Font-Merriweather {
+        font-family: 'Merriweather', serif;
+        font-size: 10pt;
+        }
+
+</style>
+
+</body>
+</html>
